@@ -105,18 +105,18 @@ Ubuntu 20.04 LTS:
  chmod +x nfsen-ng/backend/cli.php
  # next step: configuration
  ```
- Debian 11 :
+ Debian 12 *Bookworm*:
  
  ```bash
 # run following commands as root
 # install packages
-apt install apache2 git nfdump pkg-config php php-dev libapache2-mod-php rrdtool librrd-dev
+apt install apache2 git nfdump pkg-config php php-dev php-mbstring libapache2-mod-php rrdtool librrd-dev
 # enable apache modules
 a2enmod rewrite deflate headers expires
 # install rrd library for php
 pecl install rrd
 # create rrd library mod entry for php
-echo "extension=rrd.so" > /etc/php/7.4/mods-available/rrd.ini
+echo "extension=rrd.so" > /etc/php/8.2/mods-available/rrd.ini
 # enable php mod
 phpenmod rrd
 # configure virtual host to read .htaccess files
